@@ -29,8 +29,7 @@ export const useDataStore = defineStore('data', () => {
 
             eventSource.addEventListener('allocation', (event) => {
                 const allocation = JSON.parse(event.data);
-                //data.value.push(allocation); //does not work with tanstack table https://github.com/TanStack/table/pull/5687#issuecomment-2281067245
-                data.value = [...data.value, allocation];
+                data.value.push(allocation);
                 console.log('loaded allocation: ', allocation.creator_id);
                 console.log('data loaded',data.value.length);
             });
