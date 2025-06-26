@@ -8,7 +8,7 @@ This repo is the result of trying to pin down why it was not working and how I c
 
 In the end all you really need to know is this part:
 
-```go
+```typescript
 const table: Table<Allocation> = useVueTable<Allocation>({
    data: computed(()=> dataStore.data),
    get columns() {
@@ -21,7 +21,7 @@ const table: Table<Allocation> = useVueTable<Allocation>({
 the line that fixed my problem with the data rendering once and then disappearing until I changed something
 and HMR triggered and it would re-render is:
 
-```go
+```typescript
 data: computed(()=> dataStore.data),
 ```
 
